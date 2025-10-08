@@ -1,151 +1,154 @@
-# 🚀 InsightLens — AI-Powered Resume Analyzer
+🚀 InsightLens — AI-Powered Resume Analyzer
+📝 Description
+InsightLens is a full-stack AI-powered application designed to help users intelligently analyze their resumes. By leveraging modern AI models, it provides meaningful feedback, specific keyword insights, and actionable suggestions for improvement, helping users land their next job.
 
-InsightLens is a full-stack AI-powered application that helps users **analyze their resumes intelligently**.  
-It provides meaningful feedback, keyword insights, and improvement suggestions using modern AI models.
+✨ Key Features
+📝 Resume Upload: Supports uploads for standard documents (.pdf / .txt).
 
----
+⚡ AI Evaluation: Provides an AI-based scoring and comprehensive evaluation report.
 
-## 🧩 Tech Stack
+📊 Dynamic Insights: Delivers dynamic keyword insights relevant to target roles.
 
-**Frontend**
-- ⚛️ React (Vite)
-- 💨 Tailwind CSS
-- 🔄 Axios for API calls
-- 🌀 Spinner-based progress indicator
-- 🧠 Interactive results history
+🌀 User Feedback: Includes spinner progress indicators for long-running analysis jobs.
 
-**Backend**
-- 🐍 FastAPI (Python)
-- 🤖 AI-based evaluation logic
-- 📄 File handling (PDF, TXT)
-- 🧪 Modular endpoints for upload & analysis
+🧾 Reporting: Generates a downloadable detailed report of the analysis.
 
----
+🕒 History Tracking: Automatically tracks the history of multiple resume uploads and results.
 
-## 📁 Project Structure
+🧩 Tech Stack
+InsightLens is built as a robust, scalable full-stack application.
 
+Frontend
+⚛️ React (Vite): Modern, fast development environment.
+
+💨 Tailwind CSS: Utility-first framework for rapid and responsive styling.
+
+🔄 Axios: Promise-based HTTP client for API calls.
+
+🧠 Interactive UI: Features spinner progress and interactive results history.
+
+Backend
+🐍 FastAPI (Python): High-performance, async framework for the API server.
+
+🤖 AI Logic: Houses the core AI-based evaluation algorithms.
+
+📄 File Handling: Securely processes uploaded files (PDF, TXT).
+
+🧪 Modular Endpoints: Cleanly organized structure for upload and analysis logic.
+
+📁 Project Structure
 ai-resume-analyzer/
 │
-├── frontend/ # React + Tailwind UI
+├── frontend/             # React + Tailwind UI
 │ ├── src/
 │ │ ├── components/
-│ │ │ └── FileUpload.tsx
-│ │ ├── pages/
-│ │ │ └── Home.tsx
-│ │ ├── App.tsx
-│ │ └── index.tsx
-│ └── tailwind.config.js
+│ │ └── pages/
+│ │ └── App.tsx
+│ └── ...
 │
-├── backend/ # FastAPI backend
+├── backend/              # FastAPI backend
 │ ├── app/
 │ │ ├── main.py
 │ │ └── routes/
-│ │ └── upload.py
-│ ├── requirements.txt
-│ └── README.md
+│ └── requirements.txt
 │
 ├── package-lock.json
-├── README.md # (this file)
+├── README.md             # (This file)
 └── .gitignore
 
-yaml
-Copy code
+🛠️ Local Setup
+Follow these steps to get a local copy of the project running.
 
----
-
-## 🧠 Features
-
-- 📝 Upload resumes (`.pdf` / `.txt`)
-- ⚡ AI-based scoring and evaluation
-- 📊 Dynamic keyword insights
-- 🌀 Spinner progress feedback
-- 🧾 Downloadable detailed report
-- 🕒 History tracking for multiple uploads
-
----
-
-## 🛠️ Local Setup
-
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/MasterAditya/insight-lens.git
+1️⃣ Clone the Repository
+git clone [https://github.com/MasterAditya/insight-lens.git](https://github.com/MasterAditya/insight-lens.git)
 cd insight-lens
+
 2️⃣ Setup the Backend (FastAPI)
-bash
-Copy code
 cd backend
 python -m venv venv
-venv\Scripts\activate       # (Windows)
+# Activate the environment
+source venv/bin/activate    # (Linux/macOS)
+venv\Scripts\activate      # (Windows)
+
+# Install dependencies and run the server
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-👉 Server runs on http://127.0.0.1:8000
+
+👉 Server runs on: http://127.0.0.1:8000
 
 3️⃣ Setup the Frontend (React + Tailwind)
 Open a new terminal tab:
 
-bash
-Copy code
 cd frontend
 npm install
 npm start
-👉 App runs on http://localhost:3000
 
-⚙️ Environment Variables (optional)
-For local or cloud integration:
+👉 App runs on: http://localhost:3000
 
-ini
-Copy code
-BACKEND_URL=http://127.0.0.1:8000
+⚙️ Environment Variables (Optional)
+Configure your backend URL for the frontend by setting it in a configuration file or environment variable (e.g., in your React project's environment setup):
+
+# .env file or build configuration
+VITE_API_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+🧪 API Endpoints
+The primary endpoint for interaction:
+
+Method
+
+Endpoint
+
+Description
+
+POST
+
+/upload
+
+Upload a resume file for AI analysis and scoring.
+
+Example Upload (using curl):
+
+curl -X POST -F "file=@resume.pdf" [http://127.0.0.1:8000/upload](http://127.0.0.1:8000/upload)
+
 🌍 Deployment
 🧱 GitHub
-Push the entire repo:
+Push the entire repository to your remote:
 
-bash
-Copy code
 git add .
 git commit -m "🚀 Initial commit: InsightLens AI Resume Analyzer v1"
 git branch -M main
-git remote add origin https://github.com/MasterAditya/insight-lens.git
+git remote add origin [https://github.com/MasterAditya/insight-lens.git](https://github.com/MasterAditya/insight-lens.git)
 git push -u origin main
-☁️ Vercel (Frontend)
-Login at vercel.com
 
-Import your GitHub repo
+☁️ Hosting Suggestions
+Frontend (Vercel/Netlify):
 
 Set build command → npm run build
 
 Set output directory → dist or build
 
-Add environment variable:
-VITE_API_URL = https://your-backend-url
+Add environment variable: VITE_API_URL = https://your-backend-url (using the live backend URL)
 
-⚡ Backend Hosting
-Use Render, Railway, or Vercel Functions for your FastAPI backend.
+Backend (Render/Railway/Vercel Functions): Use a service optimized for Python/FastAPI hosting.
 
-🧪 API Endpoints
-Method	Endpoint	Description
-POST	/upload	Upload and analyze a resume
-
-Example:
-
-bash
-Copy code
-curl -X POST -F "file=@resume.pdf" http://127.0.0.1:8000/upload
 🧰 Contributing
-Fork the repository
+Contributions are essential to making InsightLens better! We welcome any suggestions, feature requests, or bug reports.
 
-Create a new branch:
+Fork the repository.
 
-bash
-Copy code
-git checkout -b feature/your-feature
-Commit and push your changes
+Create a new branch: git checkout -b feature/your-feature.
 
-Open a Pull Request 🚀
+Commit your changes.
+
+Push to the branch and open a Pull Request.
 
 🪪 License
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the MIT License—see the LICENSE file for details.
 
 👨‍💻 Author
-Aditya Sharma (@MasterAditya)
+Aditya Sharma - @MasterAditya
 AI & ML Developer | Full-stack Engineer | Open Source Builder
+
+Project Link: https://github.com/MasterAditya/insight-lens  
+
+Email: aditya.828777@gmail.com
