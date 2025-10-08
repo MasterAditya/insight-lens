@@ -1,4 +1,10 @@
+sentence-transformers
 fastapi
 uvicorn
-sentence-transformers
+python-multipart
+pydantic
+aiofiles
+requests
 PyPDF2
+pandas
+openai
