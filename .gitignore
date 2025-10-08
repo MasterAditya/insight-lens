@@ -1,0 +1,22 @@
+# Node / React
+frontend/node_modules/
+frontend/.next/
+frontend/build/
+frontend/dist/
+
+# Python
+backend/__pycache__/
+backend/.venv/
+backend/venv/
+*.pyc
+*.pyo
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+
