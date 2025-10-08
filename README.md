@@ -1,88 +1,151 @@
-# 🧠 InsightEyes – AI-Powered Resume Analyzer
+# 🚀 InsightLens — AI-Powered Resume Analyzer
 
-> Upload your resume and get **instant, AI-powered feedback** to impress recruiters.  
-> Built with React, Tailwind CSS, and FastAPI.
-
-![Demo Screenshot](./assets/demo-1.png)
+InsightLens is a full-stack AI-powered application that helps users **analyze their resumes intelligently**.  
+It provides meaningful feedback, keyword insights, and improvement suggestions using modern AI models.
 
 ---
 
-## ✨ Features
-
-- 📄 **Resume Upload** – Drag & drop or select PDF/TXT files.  
-- ⚡ **AI Analysis** – Keyword extraction, score calculation, and actionable insights.  
-- 📊 **Downloadable Reports** – Generate TXT or PDF reports in one click.  
-- 🕒 **History Tab** – Access previous analyses instantly.  
-- 🌀 **Spinner / Progress UI** – Smooth UX while processing resumes.  
-- 🔍 **Keyword Matching** – Highlights strengths and missing skills.
-
----
-
-## 🧰 Tech Stack
+## 🧩 Tech Stack
 
 **Frontend**
-- React  
-- Tailwind CSS  
-- Vite / CRA (depending on your setup)  
-- Deployed on [Vercel](https://vercel.com)
+- ⚛️ React (Vite)
+- 💨 Tailwind CSS
+- 🔄 Axios for API calls
+- 🌀 Spinner-based progress indicator
+- 🧠 Interactive results history
 
 **Backend**
-- FastAPI (Python)  
-- Uvicorn server  
-- Basic keyword & AI analysis logic
+- 🐍 FastAPI (Python)
+- 🤖 AI-based evaluation logic
+- 📄 File handling (PDF, TXT)
+- 🧪 Modular endpoints for upload & analysis
 
 ---
 
-## 🚀 Live Demo
+## 📁 Project Structure
 
-👉 [https://insighteyes.vercel.app](https://insighteyes.vercel.app) *(replace with your actual URL after deployment)*
+ai-resume-analyzer/
+│
+├── frontend/ # React + Tailwind UI
+│ ├── src/
+│ │ ├── components/
+│ │ │ └── FileUpload.tsx
+│ │ ├── pages/
+│ │ │ └── Home.tsx
+│ │ ├── App.tsx
+│ │ └── index.tsx
+│ └── tailwind.config.js
+│
+├── backend/ # FastAPI backend
+│ ├── app/
+│ │ ├── main.py
+│ │ └── routes/
+│ │ └── upload.py
+│ ├── requirements.txt
+│ └── README.md
+│
+├── package-lock.json
+├── README.md # (this file)
+└── .gitignore
+
+yaml
+Copy code
+
+---
+
+## 🧠 Features
+
+- 📝 Upload resumes (`.pdf` / `.txt`)
+- ⚡ AI-based scoring and evaluation
+- 📊 Dynamic keyword insights
+- 🌀 Spinner progress feedback
+- 🧾 Downloadable detailed report
+- 🕒 History tracking for multiple uploads
 
 ---
 
 ## 🛠️ Local Setup
 
-### Frontend
-
+### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/MasterAditya/ai-resume-analyzer.git
-cd ai-resume-analyzer/frontend
-npm install
-npm start
-Visit http://localhost:3000 to run the app.
-
-Backend
+git clone https://github.com/MasterAditya/insight-lens.git
+cd insight-lens
+2️⃣ Setup the Backend (FastAPI)
 bash
 Copy code
-cd ai-resume-analyzer/backend
+cd backend
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+venv\Scripts\activate       # (Windows)
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-The API will be live at http://127.0.0.1:8000.
+👉 Server runs on http://127.0.0.1:8000
 
-📂 File Structure
-css
+3️⃣ Setup the Frontend (React + Tailwind)
+Open a new terminal tab:
+
+bash
 Copy code
-frontend/
- └─ src/
-     ├─ components/
-     │   └─ FileUpload.tsx
-     ├─ pages/
-     │   └─ Home.tsx
-     ├─ App.tsx
-     └─ index.tsx
+cd frontend
+npm install
+npm start
+👉 App runs on http://localhost:3000
 
-backend/
- └─ app/
-     └─ main.py
-🤝 Contributing
-Pull requests are welcome!
-For major changes, please open an issue first to discuss what you'd like to change.
+⚙️ Environment Variables (optional)
+For local or cloud integration:
 
-📄 License
-This project is licensed under the MIT License.
-See the LICENSE file for details.
+ini
+Copy code
+BACKEND_URL=http://127.0.0.1:8000
+🌍 Deployment
+🧱 GitHub
+Push the entire repo:
 
-👤 Author
-Aditya Sharma
-🌐 LinkedIn • 💻 GitHub
+bash
+Copy code
+git add .
+git commit -m "🚀 Initial commit: InsightLens AI Resume Analyzer v1"
+git branch -M main
+git remote add origin https://github.com/MasterAditya/insight-lens.git
+git push -u origin main
+☁️ Vercel (Frontend)
+Login at vercel.com
+
+Import your GitHub repo
+
+Set build command → npm run build
+
+Set output directory → dist or build
+
+Add environment variable:
+VITE_API_URL = https://your-backend-url
+
+⚡ Backend Hosting
+Use Render, Railway, or Vercel Functions for your FastAPI backend.
+
+🧪 API Endpoints
+Method	Endpoint	Description
+POST	/upload	Upload and analyze a resume
+
+Example:
+
+bash
+Copy code
+curl -X POST -F "file=@resume.pdf" http://127.0.0.1:8000/upload
+🧰 Contributing
+Fork the repository
+
+Create a new branch:
+
+bash
+Copy code
+git checkout -b feature/your-feature
+Commit and push your changes
+
+Open a Pull Request 🚀
+
+🪪 License
+This project is licensed under the MIT License — see the LICENSE file for details.
+
+👨‍💻 Author
+Aditya Sharma (@MasterAditya)
+AI & ML Developer | Full-stack Engineer | Open Source Builder
