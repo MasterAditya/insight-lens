@@ -1,6 +1,4 @@
-That's an excellent project description\! Here is the complete content, formatted clearly in **Markdown script**, ready for you to copy and paste into a `README.md` or similar document.
 
-````markdown
 # 🚀 InsightLens — AI-Powered Resume Analyzer
 
 
