@@ -1,7 +1,7 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from .ai_evaluator import evaluate_resume
+from ai_evaluator import evaluate_resume
 
 app = FastAPI()
 
